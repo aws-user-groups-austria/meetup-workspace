@@ -1,0 +1,10 @@
+# The parts are repositories of their own (make clone)
+/meetup-sync/
+/meetup-event-vienna/
+/meetup-stream-templates/
+/meetup-deck/
+/aws-community-austria-website/
+/usergroup-toolkit.com/
+# Screenshots of the last end-to-end check
+/out/
+.DS_Store
