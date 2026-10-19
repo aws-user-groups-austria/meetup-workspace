@@ -33,6 +33,22 @@ The group's deck template (Google Slides, downloaded as .pptx) holds the
 organizers' contacts and is never committed: save it as
 `meetup-event-vienna/deck/aws-ug-vienna-austria.pptx` before `make deck`.
 
+## Automatic updates, every Monday and Friday
+
+| When (UTC) | Where | What |
+|---|---|---|
+| 05:30 | `meetup-event-vienna`, "Update meetups" | `make update`: the past meetups from the archive page, each coming meetup synced, a folder for a meetup announced since. Committed when something changed (a run that only fetched again leaves nothing to commit) |
+| 06:30 | the website, "Update meetup pages" | The room screen built from `meetup-stream-templates`, then `npm run present:sync` and a build: the meetup pages, `/present/` and the live headers. Committed and deployed when something changed |
+| daily 06:00 | the website, "Fetch Meetup Events" | The next and last meetup of each group, for the start page and the group pages |
+
+Both scheduled jobs can be started by hand from the repository's Actions tab ("Run workflow").
+
+Not automatic: the slide decks. The deck template holds the organizers'
+contacts and stays out of git, and the PDF comes from PowerPoint, so before a
+meetup an organizer runs `make deck EVENT=<id>` and then publishes the decks
+with `npm run present:sync` in the website. The scheduled job leaves the
+published decks as they are.
+
 ## Try it yourself
 
 Everything runs from this folder with `make`; `make` alone lists the
