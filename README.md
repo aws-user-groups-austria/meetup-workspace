@@ -273,3 +273,13 @@ In `meetup-deck`, the Python tests:
 ```sh
 uv run pytest
 ```
+
+## Licence
+
+[CC BY-NC-SA 4.0](LICENSE): free for volunteer-run user groups and other
+non-commercial communities to use and adapt, with attribution and under the same
+licence. Not for commercial use without written permission.
+
+The licence covers the Makefile, the spec and the guide. Each part is its own
+repository with its own `LICENSE`. Photos of people and company logos are not
+licensed to anyone else.
